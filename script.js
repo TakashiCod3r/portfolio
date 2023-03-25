@@ -52,9 +52,22 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin:'right' });
 
 /*================ typed js ===================== */
 const typed = new Typed ('.multiple-text', {
-    strings: ['Fronted Developer', 'YouTuber', 'Blogger',],
+    strings: ['Animes', 'Filmes', 'Noticiais do Mundo Otaku', 'e muito mais...',],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 })
+
+
+const logredBox = document.querySelector('.logred-box');
+const loginLink = document.querySelector('.login-link');
+const registerLink= document.querySelector('.register-link');
+
+registerLink.addEventListener('click', () => {
+    logredBox.classList.add('active');
+});
+
+loginLink.addEventListener('click', () => {
+    logredBox.classList.remove('active');
+});
