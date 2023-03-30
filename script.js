@@ -12,20 +12,23 @@ let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a [href*=' + id + ']').classList.add('active');
-            });
-        };
-    });
+   
+    let sections = document.querySelectorAll('section');
+    let navLi = document.querySelectorAll('nav ul li a');
     
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            let sectionTop = section.offsetTop -150;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLi.forEach(li =>{
+            li.classList.remove('active');
+            document.querySelector('nav ul li a[href*='+ current +']').classList.add('active');
+        })
+    }) 
 /*================ sticky navbar ===================== */
 
     let header = document.querySelector ('header');

@@ -12,6 +12,7 @@
 }
 
 
+
 :root{
     --bg-color: #1f242d;
     --second-bg-color: #323946;
@@ -64,6 +65,15 @@ z-index:100 ;
     cursor: default;
 }
 
+ul{
+    display: flex;
+
+}
+
+ul li {
+    text-decoration: none;
+    list-style: none;
+}
 .navbar a {
 font-size: 1.7rem;
 color: var(--text-color);
